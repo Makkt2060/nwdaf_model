@@ -1,0 +1,25 @@
+application:
+  debug: True
+
+model:
+  data_dir: ./data/nwdaf_data.csv
+  model_algorithm: xgboost
+  model_dir: ./model_files/xgb_model.json
+  metrics_dir: ./model_files/xgb_model_metrics.txt
+  seed: 42
+  test_start_t: 13824
+  model_parameters:
+    n_estimators: 2
+    max_depth: 2 
+    learning_rate: 1
+    tree_method: 'hist'
+  hyperparameter_optimization: 
+    active: False
+    scoring_metric: 'f1'
+    jobs: 10
+    cv: 10
+    hyperparameter_optimization_parameters:
+      max_depth: [10]
+      n_estimators: [220]
+      learning_rate: [0.05]
+      tree_method: ['approx', 'hist']
