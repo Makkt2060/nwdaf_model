@@ -1,4 +1,4 @@
-# Inconsistency detection in 5G Network 
+# Anomaly Detection in 5G Network 
 
 This project use data analytics to detect inconsistency.  
 
@@ -7,6 +7,8 @@ This project use data analytics to detect inconsistency.
 **Python libraries:**
 - pandas
 - sklearn
+- xgboost
+- flask
 
 **Python version: 3.11.6**
 
