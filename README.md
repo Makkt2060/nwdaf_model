@@ -22,7 +22,7 @@ python Main.py
 > [!TIP]
 > Expected result:
 
- * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:9538
 Press CTRL+C to quit
  * Restarting with stat
  * Debugger is active!
@@ -39,7 +39,7 @@ go run server/nefserver.go
 > [!TIP]
 > Expected result:
 
-Running on http://127.0.0.1:9538
+Running on http://127.0.0.1:9537
 
 3) NWDAF
 ```
@@ -47,13 +47,6 @@ cd NWDAF
 rm -rf go.sum
 go mod tidy
 ```
-
-- run python module
-```
-cd pythonmodule
-python main.py
-```
-Running on http://127.0.0.1:9538
 
 - Training
 ```
@@ -66,4 +59,6 @@ go run AnLF/model_inference.go
 
 > [!TIP]
 > Expected result:
+
+Running on http://127.0.0.1:9536
 

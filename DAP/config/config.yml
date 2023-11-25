@@ -1,5 +1,6 @@
 application:
   debug: True
+  port: 9538
 
 model:
   data_dir: ./DAP/data/nwdaf_data.csv
