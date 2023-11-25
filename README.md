@@ -22,7 +22,7 @@ python Main.py
 > [!TIP]
 > Expected result:
 
- * Running on http://127.0.0.1:9538
+ * Running on http://127.0.0.1:5000
 Press CTRL+C to quit
  * Restarting with stat
  * Debugger is active!
