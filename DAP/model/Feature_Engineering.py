@@ -7,7 +7,7 @@ class Feature_Engineering:
         self._config_file = config_file
 
     def _load_data(self):
-        return pd.read_csv(self._config_file['model']['data_dir'])
+        return pd.read_csv(self._config_file['base_dir'] + self._config_file['model']['data_dir'])
     
     def _compute_mean(self, df_raw, cell_id, cat_id, pe_id, num_dt):
         df_temp = df_raw[(df_raw['cell_id'] == cell_id) & (df_raw['cat_id'] == cat_id) & (df_raw['pe_id'] == pe_id)].copy()

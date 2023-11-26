@@ -3,10 +3,10 @@ application:
   port: 5000
 
 model:
-  data_dir: ./DAP/data/nwdaf_data.csv
+  data_dir: /data/nwdaf_data.csv
   model_algorithm: xgboost
-  model_dir: ./DAP/model_files/xgb_model.json
-  metrics_dir: ./DAP/model_files/xgb_model_metrics.txt
+  model_dir: /model_files/xgb_model.json
+  metrics_dir: /model_files/xgb_model_metrics.txt
   seed: 42
   test_start_t: 13824
   model_parameters:

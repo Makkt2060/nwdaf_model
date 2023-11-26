@@ -12,7 +12,7 @@ class XGBoost_Model:
 
     def load_model(self):
         try:
-            model_dir = self._config_file['model']['model_dir']
+            model_dir = self._config_file['base_dir'] + self._config_file['model']['model_dir']
             logging.info(f'Loading xgboost model from {model_dir}')
 
             self._xgb_model = XGBClassifier(objective='binary:logistic', 
@@ -101,12 +101,12 @@ class XGBoost_Model:
         y_pred = xgb_model.predict(X_test)
         report = classification_report(y_test, y_pred)
 
-        with open(self._config_file['model']['metrics_dir'], 'w') as f:
+        with open(self._config_file['base_dir'] + self._config_file['model']['metrics_dir'], 'w') as f:
             f.write(report)
 
     def _save_model(self, xgb_model):
         logging.info('Saving the xgboost model')
-        xgb_model.save_model(self._config_file['model']['model_dir'])
+        xgb_model.save_model(self._config_file['base_dir'] + self._config_file['model']['model_dir'])
 
     def training(self, df_ml):
         try:
