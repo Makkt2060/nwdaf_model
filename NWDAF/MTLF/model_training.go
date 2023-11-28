@@ -54,8 +54,8 @@ func main() {
 	go http.ListenAndServe(":9536", http.HandlerFunc(handler))
 
 	select {
-	case <-time.After(time.Second * 20):
+	case <-time.After(time.Second * 120):
+		fmt.Println("Time out!!!")
 		os.Exit(0)
 	}
 }
-
