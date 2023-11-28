@@ -12,7 +12,7 @@ import (
 )
 
 func handler(w http.ResponseWriter, req *http.Request) {
-	fmt.Println("Training request:")
+	fmt.Println("Training response:")
 	fmt.Println("Method : ", req.Method)
 
 	b, _ := ioutil.ReadAll(req.Body)
@@ -42,15 +42,10 @@ func requestModelTraining(reqNfInstanceId string) {
 	if err != nil {
 		log.Fatal("error: %v", err)
 	} else {
-		fmt.Println("Training response:")
 		fmt.Println("Header: ", resp.Header)
 		fmt.Println("************")
 		fmt.Println("Resp: ", resp)
 		fmt.Println("************")
-		respBody, _ := ioutil.ReadAll(resp.Body)
-		jsonData := map[string]interface{}{}
-		_ = json.Unmarshal(respBody, &jsonData)
-		fmt.Println(jsonData)
 	}
 }
 

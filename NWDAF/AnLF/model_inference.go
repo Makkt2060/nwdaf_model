@@ -7,7 +7,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"math/rand"
 	"net/http"
@@ -30,7 +29,7 @@ type Payload struct {
 }
 
 func handler(rw http.ResponseWriter, req *http.Request) {
-	fmt.Println("Inference request:")
+	fmt.Println("Inference response:")
 	fmt.Println("Method : ", req.Method)
 
 	b, _ := io.ReadAll(req.Body)
@@ -151,7 +150,8 @@ func requestModelTraining(reqNfInstanceId string) {
 	jsonBody["data"] = payload
 	jsonStr, _ := json.Marshal(jsonBody)
 
-	fmt.Println("JSON request: ", string(jsonStr))
+	b, _ := json.MarshalIndent(jsonBody, "", "  ")
+	fmt.Println("JSON request: ", string(b))
 	fmt.Println("*********")
 	resp, err := http.Post("http://localhost:9537", "application/json; charset=UTF-8", bytes.NewBuffer([]byte(jsonStr)))
 	if err != nil {
@@ -161,10 +161,6 @@ func requestModelTraining(reqNfInstanceId string) {
 		fmt.Println("************")
 		fmt.Println("Resp: ", resp)
 		fmt.Println("************")
-		respBody, _ := ioutil.ReadAll(resp.Body)
-		jsonData := map[string]interface{}{}
-		json.Unmarshal(respBody, &jsonData)
-		fmt.Println(jsonData)
 	}
 }
 
