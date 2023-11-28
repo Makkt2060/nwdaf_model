@@ -22,6 +22,7 @@ The objective of the project is to identify anomalies according to data obtained
 
 1) DAP (Data analytics platform)
 
+DAP description...
    
 ```
 cd DAP 
@@ -33,6 +34,7 @@ python Main.py
 ![image](https://github.com/luanlazz/nwdaf_model/assets/23390758/8e5fd61b-fa88-4b1e-b15c-cd594ca61b3e)
 
 2) NEF (Network Exposure Function)
+   
 Responsible for exposing the 5G network, making network resources such as data and network services easily available to communication service providers and third parties. In this case, the DAP subscribes to the NWDAF service, allowing the NWDAF to trigger training or inference on the DAP.
 
 To run the service, follow the code:
@@ -48,6 +50,7 @@ go run server/nefserver.go
 ![image](https://github.com/luanlazz/nwdaf_model/assets/23390758/12d12930-9655-461a-a530-520abb7dcb32)
 
 3) NWDAF (Network Data Analytics Function)
+   
 Responsible for collecting information from various 5G core network functions (NF), application functions (AF), operations systems, administration and management, and operational support systems.
 The service contain the model training (MTLF) and inference (AnLF).
 
