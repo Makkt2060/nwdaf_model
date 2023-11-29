@@ -14,13 +14,13 @@ The DAP is a Python module with a Flask Application Programming Interface (API) 
 
 The project contains a structured Python notebook to describe the Exploratory Data Analysis (EDA) process, showing the details about the dataset used for training the ML model to detect anomalies. This notebook is available [here](./DAP/notebooks/eda.ipynb).
 
-## ML Models:
+## ML Model:
 
 The project also has a structured Python notebook for describing the training process of ML models. It is worth noting that this notebook pertains to an experimentation phase, being a good first step to understand how the training process occurs. This notebook can be accessed [here](./DAP/notebooks/model_training.ipynb).
 
-In the production environment, the code of this notebook is organized in Python scripts, available on the [model folder](./DAP/model/).
+In the production environment, the code of this notebook is organized in Python scripts, available in the [model folder](./DAP/model/).
 
-## Requirements :
+## Requirements:
 
 **Python libraries:**
 - pandas
