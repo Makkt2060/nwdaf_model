@@ -4,8 +4,6 @@ The objective of the project is to identify anomalies according to data obtained
 
 The NWDAF is the service responsible for triggering training and inference in the model. This service is divided into Model Training Logical Function (MTLF) and Analytics Logical Function (AnLF). MTLF is a function that trains ML models and exposes new training services such as an ML model provisioning service. AnLF performs inference with ML models and provides the analytics results to service consumers (e.g., 5G network functions, application functions, and OAM). When the NWDAF is activated, the Network Exposure Function (NEF) listens for the requests and passes the request to the DAP, following the idea of Pub/Sub.
 
-The DAP is a Python module with a Flask Application Programming Interface (API) for providing the services to train ML models (MTLF) and perform inference on new data (AnLF). The MTLF class processes the data (feature engineering), trains an XGBoost model, and saves this model on a local path. The AnLF loads a trained model and performs inference on new data.
-
 ### Proposed architecture
 
 ![MicrosoftTeams-image](https://github.com/luanlazz/nwdaf_model/assets/23390758/da50e0a6-683b-42df-8d3e-b81cb5ae54e3)
@@ -36,7 +34,7 @@ In the production environment, the code of this notebook is organized in Python 
 
 1) DAP (Data analytics platform)
 
-DAP description...
+The DAP is a Python module with a Flask Application Programming Interface (API) for providing the services to train ML models (MTLF) and perform inference on new data (AnLF). The MTLF class processes the data (feature engineering), trains an XGBoost model, and saves this model on a local path. The AnLF loads a trained model and performs inference on new data.
    
 ```
 cd DAP 
