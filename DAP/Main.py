@@ -7,7 +7,8 @@ from functions import ANLF as anlf
 from flask import Flask, request
 
 app = Flask(__name__)
-
+# This is a single-line comment
+print("Ayub have modified the code")  # This is an inline comment
 class Main:
 
     @app.route('/', methods=['GET', 'POST'])
